@@ -40,9 +40,9 @@ function App() {
     });
   }, []);
 
-  if (!authChecked) {
-    return <div></div>;
-  }
+  // if (!authChecked) {
+  //   return <div></div>;
+  // }
   return (
     <AuthProvider>
       <BrowserRouter>
