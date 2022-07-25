@@ -14,7 +14,7 @@ function BasicExample({ currentUser }) {
     return (
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="/">A Step Above</Navbar.Brand>
+          <Navbar.Brand href="/Final-Project">A Step Above</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
