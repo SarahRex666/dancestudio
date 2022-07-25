@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :registrations
   resources :users 
   resources :sessions
+  resources :main
   get "/me", to: "users#show"
   post "/login", to: "sessions#create"
   post "/signup", to: "users#create"
