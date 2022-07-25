@@ -40,7 +40,15 @@ function App() {
   }, [currentUser]);
   console.log(currentUser);
   if (!authChecked) {
-    return <div></div>;
+    return (
+      <div>
+        {" "}
+        <img
+          class="rounded mx-auto d-block"
+          src="https://i.ibb.co/nwpScGw/A-Step-above.png"
+        ></img>
+      </div>
+    );
   }
   return (
     <AuthProvider>
@@ -87,6 +95,10 @@ function App() {
               <Route path="/" element={<Home />} />
             </Routes>
           </div>
+          <img
+            class="rounded mx-auto d-block"
+            src="https://i.ibb.co/nwpScGw/A-Step-above.png"
+          ></img>
         </div>
       </BrowserRouter>
     </AuthProvider>
