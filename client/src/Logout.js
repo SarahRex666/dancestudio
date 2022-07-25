@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 function Logout({ setCurrentUser }) {
   const navigate = useNavigate();
   useEffect(() => {
-    fetch("http://localhost:3000/logout", {
+    fetch("/logout", {
       method: "DELETE",
     })
       .then(() => setCurrentUser(null))

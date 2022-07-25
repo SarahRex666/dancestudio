@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :teachers
   resources :dance_classes
-  resources :users
+  resources :registrations
+  resources :users 
   resources :sessions
   get "/me", to: "users#show"
   post "/login", to: "sessions#create"

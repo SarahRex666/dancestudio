@@ -2,13 +2,12 @@ class DanceClassesController < ApplicationController
     skip_before_action :authenticate_user
 
     def index
-        dance_classes = DanceClass.all
-        render json: dance_classes
+        render json: DanceClass.all
     end
 
     def show
         dance_class = DanceClass.find_by(id: params[:id])
-        render json: dance_class, serializer: DanceClassSerializer, status: :ok
+        render json: dance_class, include: "*.*"
     end
 
     def create
@@ -30,12 +29,7 @@ class DanceClassesController < ApplicationController
 
     private 
 
-    # def authorize_user
-    #     return if current_user.admin?
-    #     render json: { errors: "No permission"}, status: :forbidden
-    # end
-
     def dance_class_params
-        params.permit(:id, :name, :style, :description, :user_id, :teacher_id, :dance_class)
+        params.permit(:id, :name, :style, :description)
     end
 end

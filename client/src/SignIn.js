@@ -18,18 +18,20 @@ function SignIn({ setCurrentUser }) {
       [e.target.id]: e.target.value,
     });
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:3000/login", {
+    fetch("/login", {
       method: "POST",
+      withCredentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formState),
     })
       .then((r) => r.json())
-      .then((newUser) => setCurrentUser(newUser))
+      .then((newUser) => {
+        if (newUser.id) setCurrentUser(newUser);
+      })
       .then(navigate("/"));
   };
 

@@ -1,14 +1,16 @@
 import React, { useReducer, useState } from "react";
 import Button from "react-bootstrap/Button";
 
-function ProfileDeleteCard({ danceClass, currentUser }) {
+function ProfileDeleteCard({ danceClass, setCurrentUser, currentUser }) {
   const handleDelete = () => {
-    fetch(`http://localhost:3000/dance_classes/${danceClass.id}`, {
+    const regId = danceClass.registrations[0].id;
+    console.log(danceClass.registrations);
+    fetch(`/registrations/${regId}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
       },
-    });
+    }).then(setCurrentUser(currentUser));
   };
 
   return (

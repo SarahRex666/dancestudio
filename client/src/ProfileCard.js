@@ -13,11 +13,13 @@ function ProfileCard({ currentUser, setCurrentUser }) {
     phone,
     dance_classes,
   } = currentUser;
+
   useEffect(() => {
-    fetch(`http://localhost:3000/users/${currentUser.id}`)
+    fetch(`/me`)
       .then((response) => response.json())
       .then((data) => setClasses(data.dance_classes));
   }, [classes]);
+
   return (
     <div>
       <br></br>
@@ -26,7 +28,11 @@ function ProfileCard({ currentUser, setCurrentUser }) {
       <h3>Classes:</h3>
       <br></br>
       {classes.map((danceClass) => (
-        <ProfileDeleteCard currentUser={currentUser} danceClass={danceClass} />
+        <ProfileDeleteCard
+          currentUser={currentUser}
+          danceClass={danceClass}
+          setCurrentUser={setCurrentUser}
+        />
       ))}
     </div>
   );

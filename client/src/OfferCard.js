@@ -7,15 +7,18 @@ function OfferCard({ offer, currentUser, setCurrentUser }) {
   const { id, name, style, description, time } = offer;
 
   function addDanceClass(offerId) {
-    fetch(`http://localhost:3000/dance_classes/${offerId}`, {
-      method: "PATCH",
+    fetch(`/registrations`, {
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
         user_id: currentUser.id,
+        dance_class_id: offerId,
       }),
-    }).then(forceUpdate());
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res));
   }
 
   if (currentUser) {

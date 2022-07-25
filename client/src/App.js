@@ -25,11 +25,10 @@ import { Button } from "react-bootstrap/Button";
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [authChecked, setAuthChecked] = useState(false);
-  const [deleted, setDeleted] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:3000/me", {
-      withCredentials: true,
+    fetch("/me", {
+      withCredentials: "include",
     }).then((res) => {
       if (res.ok) {
         res.json().then((user) => {
@@ -38,11 +37,11 @@ function App() {
         });
       } else setAuthChecked(true);
     });
-  }, []);
+  }, [currentUser]);
 
-  // if (!authChecked) {
-  //   return <div></div>;
-  // }
+  if (!authChecked) {
+    return <div></div>;
+  }
   return (
     <AuthProvider>
       <BrowserRouter>
@@ -52,7 +51,11 @@ function App() {
           </nav>
           <div class="container-fluid">
             <Routes>
-              <Route path="/Teachers" element={<Teachers />} />
+              <Route
+                path="/Teachers"
+                currentUser={currentUser}
+                element={<Teachers />}
+              />
               <Route
                 path="/Offerings"
                 element={

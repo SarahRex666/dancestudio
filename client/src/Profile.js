@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import ProfileCard from "./ProfileCard";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -8,14 +8,19 @@ import FormContainer from "./FormContainer";
 function Profile({ currentUser, setCurrentUser }) {
   const navigate = useNavigate();
   const [formState, setFormState] = useState({
-    username: "",
-    password: "",
     first_name: "",
     last_name: "",
     address: "",
     phone: "",
   });
 
+  useEffect(() => {
+    fetch(`/me`)
+      .then((response) => response.json())
+      .then((data) => setFormState(data));
+  }, []);
+
+  console.log(formState);
   const handleChange = (e) => {
     setFormState({
       ...formState,
@@ -25,7 +30,7 @@ function Profile({ currentUser, setCurrentUser }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:3000/users/${currentUser.id}`, {
+    fetch(`/users/${currentUser.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -33,7 +38,8 @@ function Profile({ currentUser, setCurrentUser }) {
       body: JSON.stringify(formState),
     })
       .then((r) => r.json())
-      .then(setFormState(""));
+      .then(setFormState(""))
+      .then(navigate("/"));
   };
 
   return (
@@ -77,23 +83,6 @@ function Profile({ currentUser, setCurrentUser }) {
             type="text"
             id="phone"
             defaultValue={currentUser.phone}
-            onChange={handleChange}
-          />
-          <br></br>
-          <Form.Label>Username</Form.Label>
-          <Form.Control
-            type="text"
-            id="username"
-            defaultValue={currentUser.username}
-            onChange={handleChange}
-          />
-          <br></br>
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="text"
-            id="password"
-            placeholder="Password"
-            value={formState.password}
             onChange={handleChange}
           />
           <br></br>

@@ -1,6 +1,11 @@
 class SessionsController < ApplicationController
     skip_before_action :authenticate_user
 
+    def index
+        session_hash = session.id
+        render json: session_hash
+    end
+
 # login
     def create
     user = User.find_by(username: params[:username])
@@ -16,7 +21,7 @@ end
     def destroy
         if current_user
             session.delete :user_id
-            render json: "Logged Out" 
+            render json: "Logged Out", status: :ok
         else
             render json: { errors: "no active session"}, status: :unauthorized
         end

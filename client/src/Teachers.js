@@ -14,7 +14,9 @@ function Teachers() {
     })
       .then((resp) => resp.json())
       .then((data) => setTeachers(data));
-  }, []);
+  }, [teachers]);
+
+  console.log(teachers);
 
   return (
     <div class="container">

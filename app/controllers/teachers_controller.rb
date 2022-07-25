@@ -1,6 +1,6 @@
 class TeachersController < ApplicationController
     skip_before_action :authenticate_user
-    
+
     def index
         teachers = Teacher.all
         render json: teachers
@@ -19,5 +19,11 @@ class TeachersController < ApplicationController
         else 
             render json: { error: "Teacher not found."}, status: :not_found
         end
+    end
+
+    private
+
+    def teacher_params
+        params.permit(:name, :bio, :image_url)
     end
 end
