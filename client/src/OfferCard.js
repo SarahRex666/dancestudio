@@ -3,11 +3,10 @@ import Button from "react-bootstrap/Button";
 
 function OfferCard({ offer, currentUser, setCurrentUser }) {
   const [classes, setClasses] = useState("");
-  const [, forceUpdate] = useReducer((x) => 1, 0);
   const { id, name, style, description, time } = offer;
 
   function addDanceClass(offerId) {
-    fetch(`/registrations`, {
+    fetch(`https://final-project-asapa.herokuapp.com/registrations`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

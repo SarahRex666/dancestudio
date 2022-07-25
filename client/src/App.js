@@ -27,7 +27,7 @@ function App() {
   const [authChecked, setAuthChecked] = useState(false);
 
   useEffect(() => {
-    fetch("/me", {
+    fetch("https://final-project-asapa.herokuapp.com/me", {
       withCredentials: "include",
     }).then((res) => {
       if (res.ok) {
@@ -38,7 +38,7 @@ function App() {
       } else setAuthChecked(true);
     });
   }, [currentUser]);
-
+  console.log(currentUser);
   if (!authChecked) {
     return <div></div>;
   }

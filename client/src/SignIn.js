@@ -20,7 +20,7 @@ function SignIn({ setCurrentUser }) {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("/login", {
+    fetch("https://final-project-asapa.herokuapp.com/login", {
       method: "POST",
       withCredentials: "include",
       headers: {

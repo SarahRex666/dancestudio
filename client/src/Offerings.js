@@ -5,7 +5,7 @@ function Offerings({ currentUser, setCurrentUser }) {
   const [offerings, setOfferings] = useState([]);
   const [, forceUpdate] = useReducer((x) => 1, 0);
   useEffect(() => {
-    fetch("/dance_classes", {
+    fetch("https://final-project-asapa.herokuapp.com/dance_classes", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

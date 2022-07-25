@@ -15,12 +15,11 @@ function Profile({ currentUser, setCurrentUser }) {
   });
 
   useEffect(() => {
-    fetch(`/me`)
+    fetch(`https://final-project-asapa.herokuapp.com/me`)
       .then((response) => response.json())
       .then((data) => setFormState(data));
   }, []);
 
-  console.log(formState);
   const handleChange = (e) => {
     setFormState({
       ...formState,

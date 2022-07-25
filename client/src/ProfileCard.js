@@ -15,7 +15,7 @@ function ProfileCard({ currentUser, setCurrentUser }) {
   } = currentUser;
 
   useEffect(() => {
-    fetch(`/me`)
+    fetch(`https://final-project-asapa.herokuapp.com/me`)
       .then((response) => response.json())
       .then((data) => setClasses(data.dance_classes));
   }, [classes]);
