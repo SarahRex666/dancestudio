@@ -15,10 +15,10 @@ function ProfileCard({ currentUser, setCurrentUser }) {
   } = currentUser;
 
   useEffect(() => {
-    fetch(`https://final-project-asapa.herokuapp.com/me`)
+    fetch(`/me`)
       .then((response) => response.json())
-      .then((data) => setClasses(data.dance_classes));
-  }, [classes]);
+      .then((data) => setClasses(data.registrations));
+  }, []);
 
   return (
     <div>
@@ -32,6 +32,8 @@ function ProfileCard({ currentUser, setCurrentUser }) {
           currentUser={currentUser}
           danceClass={danceClass}
           setCurrentUser={setCurrentUser}
+          setClasses={setClasses}
+          classes={classes}
         />
       ))}
     </div>

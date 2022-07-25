@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 function Logout({ setCurrentUser }) {
   const navigate = useNavigate();
   useEffect(() => {
-    fetch("https://final-project-asapa.herokuapp.com/logout", {
+    fetch("/logout", {
       method: "DELETE",
     })
       .then(() => setCurrentUser(null))

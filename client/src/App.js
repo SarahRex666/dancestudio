@@ -1,17 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom/client";
-import {
-  BrowserRouter,
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-  useNavigate,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./Navbar";
 import Teachers from "./Teachers";
-import Contacts from "./Contact";
 import Offerings from "./Offerings";
 import Home from "./Home";
 import SignIn from "./SignIn";
@@ -20,14 +11,13 @@ import { AuthProvider } from "./auth";
 import Contact from "./Contact";
 import Logout from "./Logout";
 import Profile from "./Profile";
-import { Button } from "react-bootstrap/Button";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [authChecked, setAuthChecked] = useState(false);
 
   useEffect(() => {
-    fetch("https://final-project-asapa.herokuapp.com/me", {
+    fetch("/me", {
       withCredentials: "include",
     }).then((res) => {
       if (res.ok) {
@@ -37,18 +27,10 @@ function App() {
         });
       } else setAuthChecked(true);
     });
-  }, [currentUser]);
-  console.log(currentUser);
+  }, []);
+
   if (!authChecked) {
-    return (
-      <div>
-        {" "}
-        <img
-          class="rounded mx-auto d-block"
-          src="https://i.ibb.co/nwpScGw/A-Step-above.png"
-        ></img>
-      </div>
-    );
+    return <div> </div>;
   }
   return (
     <AuthProvider>
@@ -95,10 +77,6 @@ function App() {
               <Route path="/" element={<Home />} />
             </Routes>
           </div>
-          <img
-            class="rounded mx-auto d-block"
-            src="https://i.ibb.co/nwpScGw/A-Step-above.png"
-          ></img>
         </div>
       </BrowserRouter>
     </AuthProvider>

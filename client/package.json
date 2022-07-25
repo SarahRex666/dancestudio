@@ -1,8 +1,8 @@
 {
   "name": "dance",
   "version": "0.1.0",
-  "homepage": "https://sarahrex666.github.io/Final-Project/",
-  "private": false,
+  "proxy": "http://localhost:3000",
+  "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",

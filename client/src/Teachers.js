@@ -6,7 +6,7 @@ function Teachers() {
   const [teachers, setTeachers] = useState([]);
 
   useEffect(() => {
-    fetch("https://final-project-asapa.herokuapp.com/teachers", {
+    fetch("/teachers", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -14,7 +14,7 @@ function Teachers() {
     })
       .then((resp) => resp.json())
       .then((data) => setTeachers(data));
-  }, [teachers]);
+  }, []);
 
   return (
     <div class="container">

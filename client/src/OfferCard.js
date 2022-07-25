@@ -6,7 +6,7 @@ function OfferCard({ offer, currentUser, setCurrentUser }) {
   const { id, name, style, description, time } = offer;
 
   function addDanceClass(offerId) {
-    fetch(`https://final-project-asapa.herokuapp.com/registrations`, {
+    fetch(`/registrations`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
