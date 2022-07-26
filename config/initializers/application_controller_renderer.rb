@@ -2,8 +2,7 @@
 
 ActiveSupport::Reloader.to_prepare do
   ApplicationController.renderer.defaults.merge!(
-    http_host: 'http://localhost:3001',
-    proxy: "http://localhost:3000",
+    http_host: 'http://localhost:3000',
     https: false
   )
 end

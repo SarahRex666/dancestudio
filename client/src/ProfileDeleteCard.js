@@ -11,7 +11,6 @@ function ProfileDeleteCard({
 }) {
   const navigate = useNavigate();
   const handleDelete = () => {
-    console.log(danceClass.dance_class.name);
     fetch(`/registrations/${danceClass.id}`, {
       method: "DELETE",
       headers: {

@@ -15,10 +15,10 @@ function Profile({ currentUser, setCurrentUser }) {
   });
 
   useEffect(() => {
-    fetch(`/me`)
-      .then((response) => response.json())
-      .then((data) => setFormState(data));
-  }, [currentUser]);
+    fetch("/me", {
+      withCredentials: "include",
+    });
+  }, []);
 
   const handleChange = (e) => {
     setFormState({

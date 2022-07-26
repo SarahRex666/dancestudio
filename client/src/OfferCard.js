@@ -15,11 +15,8 @@ function OfferCard({ offer, currentUser, setCurrentUser }) {
         user_id: currentUser.id,
         dance_class_id: offerId,
       }),
-    })
-      .then((res) => res.json())
-      .then((res) => console.log(res));
+    });
   }
-
   if (currentUser) {
     return (
       <div>

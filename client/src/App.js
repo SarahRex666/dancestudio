@@ -11,6 +11,7 @@ import { AuthProvider } from "./auth";
 import Contact from "./Contact";
 import Logout from "./Logout";
 import Profile from "./Profile";
+import Reviews from "./Reviews";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -39,7 +40,7 @@ function App() {
           <nav>
             <Navbar currentUser={currentUser} />
           </nav>
-          <div class="container-fluid">
+          <div>
             <Routes>
               <Route
                 path="/Teachers"
@@ -56,6 +57,7 @@ function App() {
                 }
               />
               <Route path="/Contact" element={<Contact />} />
+              <Route path="/Reviews" element={<Reviews />} />
               <Route
                 path="/SignIn"
                 element={<SignIn setCurrentUser={setCurrentUser} />}
