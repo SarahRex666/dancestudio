@@ -8,9 +8,9 @@ import React, { useState, useEffect } from "react";
 import Logout from "./Logout";
 
 function BasicExample({ currentUser }) {
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState([]);
 
-  if (currentUser.id) {
+  if (currentUser) {
     return (
       <Navbar bg="light" expand="lg">
         <Container>
