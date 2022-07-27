@@ -17,10 +17,11 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "cp -a build/. public",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "heroku-postbuild": "npm run build && npm run deploy",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
