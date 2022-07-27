@@ -5,3 +5,5 @@ class UserMailer < ApplicationMailer
         user = params[:user]
         url = 
     end
+
+end
