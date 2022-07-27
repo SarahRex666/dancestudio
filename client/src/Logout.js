@@ -5,9 +5,10 @@ function Logout({ setCurrentUser }) {
   const navigate = useNavigate();
   useEffect(() => {
     fetch("/logout", {
+      withCredentials: "include",
       method: "DELETE",
     })
-      .then(() => setCurrentUser(null))
+      .then(() => setCurrentUser([]))
       .then(navigate("/"));
   });
   return <div></div>;

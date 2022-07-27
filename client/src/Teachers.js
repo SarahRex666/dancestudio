@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import TeacherContainer from "./TeacherContainer";
-import { Button } from "react-bootstrap/Button";
 
-function Teachers() {
+function Teachers({ currentUser }) {
   const [teachers, setTeachers] = useState([]);
+  const [bio, setBio] = useState([]);
 
   useEffect(() => {
     fetch("/teachers", {
@@ -20,8 +20,12 @@ function Teachers() {
     <div class="container">
       <br></br>
       <br></br>
-      <h1>TEACHERS</h1>
-      <TeacherContainer teachers={teachers} />
+      <TeacherContainer
+        setBio={setBio}
+        bio={bio}
+        teachers={teachers}
+        setTeachers={setTeachers}
+      />
     </div>
   );
 }

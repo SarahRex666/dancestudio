@@ -9,6 +9,7 @@ User.destroy_all
 DanceClass.destroy_all
 Registration.destroy_all
 Teacher.destroy_all
+Review.destroy_all
 
 puts "Seeding users.."
 user1 = User.create(email: "sarahrexmakes@gmail.com", first_name: "Sarah", last_name: "Rex", address: "10 Surrey Ln", phone: "516-428-5941", username: "Sarah", password: "password", admin: true)
@@ -55,3 +56,20 @@ Registration.create(user_id: user8.id, dance_class_id: class8.id)
 Registration.create(user_id: user9.id, dance_class_id: class9.id)
 Registration.create(user_id: user1.id, dance_class_id: class10.id)
 Registration.create(user_id: user5.id, dance_class_id: class11.id)
+
+puts "Seeding reviews..."
+
+Review.create(user_id: user1.id, teacher_id: teacher1.id, content: "The best teacher ever!", rating: 5)
+Review.create(user_id: user2.id, teacher_id: teacher1.id, content: "The best teacher ever!", rating: 5)
+Review.create(user_id: user2.id, teacher_id: teacher2.id, content: "The best teacher ever!", rating: 5)
+Review.create(user_id: user3.id, teacher_id: teacher2.id, content: "The best teacher ever!", rating: 5)
+Review.create(user_id: user7.id, teacher_id: teacher3.id, content: "The best teacher ever!", rating: 5)
+Review.create(user_id: user8.id, teacher_id: teacher3.id, content: "The best teacher ever!", rating: 5)
+Review.create(user_id: user8.id, teacher_id: teacher4.id, content: "The best teacher ever!", rating: 5)
+Review.create(user_id: user1.id, teacher_id: teacher4.id, content: "The best teacher ever!", rating: 5)
+Review.create(user_id: user2.id, teacher_id: teacher5.id, content: "The best teacher ever!", rating: 5)
+Review.create(user_id: user5.id, teacher_id: teacher5.id, content: "The best teacher ever!", rating: 5)
+Review.create(user_id: user3.id, teacher_id: teacher6.id, content: "The best teacher ever!", rating: 5)
+Review.create(user_id: user7.id, teacher_id: teacher6.id, content: "The best teacher ever!", rating: 5)
+Review.create(user_id: user8.id, teacher_id: teacher1.id, content: "The best teacher ever!", rating: 5)
+Review.create(user_id: user8.id, teacher_id: teacher2.id, content: "The best teacher ever!", rating: 5)

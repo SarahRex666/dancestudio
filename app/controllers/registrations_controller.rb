@@ -19,7 +19,7 @@ class RegistrationsController < ApplicationController
         def destroy
             registration = Registration.find_by(id: params[:id])
             registration.destroy
-            render json: ""
+            render json: Registration.all
         end
     
         private 

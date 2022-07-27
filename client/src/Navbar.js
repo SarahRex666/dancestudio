@@ -10,7 +10,7 @@ import Logout from "./Logout";
 function BasicExample({ currentUser }) {
   const [user, setUser] = useState("");
 
-  if (currentUser) {
+  if (currentUser.id) {
     return (
       <Navbar bg="light" expand="lg">
         <Container>
@@ -30,9 +30,6 @@ function BasicExample({ currentUser }) {
 
               <Nav.Link as={Link} to="/contact">
                 Contact Us
-              </Nav.Link>
-              <Nav.Link as={Link} to="/cart">
-                Cart
               </Nav.Link>
               <Nav.Link as={Link} to="/profile">
                 Profile

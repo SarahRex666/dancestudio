@@ -1,28 +1,21 @@
-import React, { useReducer, useState } from "react";
 import Button from "react-bootstrap/Button";
-import { useNavigate } from "react-router-dom";
 
-function ProfileDeleteCard({
-  danceClass,
-  setCurrentUser,
-  currentUser,
-  setClasses,
-  classes,
-}) {
-  const navigate = useNavigate();
+function ProfileDeleteCard({ danceClass, setClasses, classes }) {
   const handleDelete = () => {
     fetch(`/registrations/${danceClass.id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
       },
-    }).then(navigate("/"));
+    })
+      .then((resp) => resp.json())
+      .then((resp) => setClasses(resp));
   };
 
   return (
     <div>
       {classes ? (
-        <div>
+        <div id={danceClass.dance_class.id}>
           <p>{danceClass.dance_class.name}</p>
           <p>{danceClass.dance_class.time}</p>
         </div>

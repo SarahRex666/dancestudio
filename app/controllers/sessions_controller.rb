@@ -19,7 +19,7 @@ end
 
     #logout
     def destroy
-        if current_user
+        if session.id
             session.delete :user_id
             render json: "Logged Out", status: :ok
         else

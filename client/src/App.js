@@ -11,10 +11,10 @@ import { AuthProvider } from "./auth";
 import Contact from "./Contact";
 import Logout from "./Logout";
 import Profile from "./Profile";
-import Reviews from "./Reviews";
+import TeacherBio from "./TeacherBio";
 
 function App() {
-  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState([]);
   const [authChecked, setAuthChecked] = useState(false);
 
   useEffect(() => {
@@ -57,7 +57,6 @@ function App() {
                 }
               />
               <Route path="/Contact" element={<Contact />} />
-              <Route path="/Reviews" element={<Reviews />} />
               <Route
                 path="/SignIn"
                 element={<SignIn setCurrentUser={setCurrentUser} />}
