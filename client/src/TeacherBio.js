@@ -40,7 +40,7 @@ function TeacherBio({ bio, user, setTeachers, setBio }) {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:3000/teachers/${bio.id}`)
+    fetch(`/teachers/${bio.id}`)
       .then((res) => res.json())
       .then((res) => setReviewContent(res.reviews));
   }, []);

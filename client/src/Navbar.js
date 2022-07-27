@@ -10,7 +10,7 @@ import Logout from "./Logout";
 function BasicExample({ currentUser }) {
   const [user, setUser] = useState([]);
 
-  if (currentUser) {
+  if (currentUser && currentUser.id) {
     return (
       <Navbar bg="light" expand="lg">
         <Container>

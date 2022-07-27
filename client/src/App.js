@@ -18,7 +18,7 @@ function App() {
   const [authChecked, setAuthChecked] = useState(false);
 
   useEffect(() => {
-    fetch("https://final-project-asapa.herokuapp.com/me", {
+    fetch("/me", {
       withCredentials: "include",
     }).then((res) => {
       if (res.ok) {
