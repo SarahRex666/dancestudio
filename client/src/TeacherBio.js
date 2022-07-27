@@ -17,6 +17,7 @@ function TeacherBio({ bio, user, setTeachers, setBio }) {
     content: "",
     rating: "",
   });
+  console.log(formState);
 
   const handleChange = (e) => {
     setFormState({
@@ -70,19 +71,15 @@ function TeacherBio({ bio, user, setTeachers, setBio }) {
           <FormContainer>
             <Form class="container" onSubmit={handleSubmit}>
               <Form.Group className="mt-5">
-                <Form.Select
-                  aria-label="rating"
-                  onChange={handleChange}
-                  value="rating"
-                  id="rating"
-                >
+                <Form.Select onChange={(e) => handleChange(e)} id="rating">
                   <option>Rating:</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                  <option value="4">Four</option>
-                  <option value="5">Five</option>
+                  <option value="5">Five Stars!</option>
+                  <option value="4">Four Stars</option>
+                  <option value="3">Three Stars</option>
+                  <option value="2">Two Stars</option>
+                  <option value="1">One Star</option>
                 </Form.Select>
+                <br></br>
                 <FloatingLabel label="Review">
                   <Form.Control
                     as="textarea"
