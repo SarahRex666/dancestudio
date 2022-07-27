@@ -13,7 +13,6 @@ function ProfileCard({ currentUser, setCurrentUser }) {
     phone,
     dance_classes,
   } = currentUser;
-  console.log(classes);
   useEffect(() => {
     fetch(`/me`)
       .then((response) => response.json())

@@ -11,13 +11,13 @@ function ProfileDeleteCard({ danceClass, setClasses, classes }) {
       .then((resp) => resp.json())
       .then((resp) => setClasses(resp));
   };
-
+  console.log(danceClass);
   return (
     <div>
       {classes ? (
-        <div id={danceClass.dance_class.id}>
-          <p>{danceClass.dance_class.name}</p>
-          <p>{danceClass.dance_class.time}</p>
+        <div id={danceClass.id}>
+          {/* <p>{danceClass.danceClass.name}</p> */}
+          <p>{}</p>
         </div>
       ) : null}
       <Button

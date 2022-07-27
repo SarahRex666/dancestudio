@@ -17,7 +17,7 @@ function OfferCard({ offer, currentUser, setCurrentUser }) {
       }),
     });
   }
-  if (currentUser) {
+  if (currentUser.id) {
     return (
       <div>
         <br></br>
