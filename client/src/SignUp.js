@@ -25,6 +25,7 @@ function SignUp() {
     e.preventDefault();
     fetch("/users", {
       method: "POST",
+      withCredentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
