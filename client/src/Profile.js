@@ -37,8 +37,8 @@ function Profile({ currentUser, setCurrentUser }) {
       body: JSON.stringify(formState),
     })
       .then((r) => r.json())
-      .then(setFormState(""))
-      .then(navigate("/"));
+      .then(setFormState(""));
+    // .then(navigate("/"));
   };
 
   return (
