@@ -23,7 +23,7 @@ function SignUp() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("/users", {
+    fetch("/signup", {
       method: "POST",
       withCredentials: "include",
       headers: {
@@ -32,8 +32,8 @@ function SignUp() {
       body: JSON.stringify(formState),
     })
       .then((r) => r.json())
-      .then((newUser) => console.log(newUser))
-      .then(navigate("/"));
+      .then((newUser) => console.log(newUser));
+    // .then(navigate("/"));
   };
 
   return (
@@ -64,6 +64,15 @@ function SignUp() {
             id="address"
             placeholder="Address"
             value={formState.address}
+            onChange={handleChange}
+          />
+          <br></br>
+          <Form.Label>Email</Form.Label>
+          <Form.Control
+            type="text"
+            id="email"
+            placeholder="Email"
+            value={formState.email}
             onChange={handleChange}
           />
           <br></br>
