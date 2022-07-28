@@ -67,6 +67,15 @@ function SignUp() {
             onChange={handleChange}
           />
           <br></br>
+          <Form.Label>Email</Form.Label>
+          <Form.Control
+            type="text"
+            id="email"
+            placeholder="Email"
+            value={formState.email}
+            onChange={handleChange}
+          />
+          <br></br>
           <Form.Label>Phone Number</Form.Label>
           <Form.Control
             type="text"
