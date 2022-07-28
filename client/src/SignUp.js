@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import FormContainer from "./FormContainer";
+import { Navigate } from "react-router-dom";
 function SignUp() {
+  const nav = Navigate();
   const [formState, setFormState] = useState({
     username: "",
     password: "",
@@ -31,7 +33,8 @@ function SignUp() {
       body: JSON.stringify(formState),
     })
       .then((r) => r.json())
-      .then((newUser) => setUser(newUser));
+      .then((newUser) => setUser(newUser))
+      .then(nav("/"));
   };
 
   return (
