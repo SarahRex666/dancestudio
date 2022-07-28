@@ -31,8 +31,8 @@ function SignUp() {
       body: JSON.stringify(formState),
     })
       .then((r) => r.json())
-      .then((newUser) => console.log(newUser));
-    // .then(navigate("/"));
+      .then((newUser) => console.log(newUser))
+      .then(navigate("/"));
   };
 
   return (
