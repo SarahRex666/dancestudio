@@ -50,7 +50,7 @@ function SignIn({ setCurrentUser }) {
           <br></br>
           <Form.Label>Password</Form.Label>
           <Form.Control
-            type="text"
+            type="password"
             id="password"
             placeholder="Password"
             value={formState.password}

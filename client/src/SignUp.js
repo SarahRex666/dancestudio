@@ -32,8 +32,8 @@ function SignUp() {
       body: JSON.stringify(formState),
     })
       .then((r) => r.json())
-      .then((newUser) => console.log(newUser));
-    // .then(navigate("/"));
+      .then((newUser) => console.log(newUser))
+      .then(navigate("/"));
   };
 
   return (
@@ -96,7 +96,7 @@ function SignUp() {
           <br></br>
           <Form.Label>Password</Form.Label>
           <Form.Control
-            type="text"
+            type="password"
             id="password"
             placeholder="Password"
             value={formState.password}
