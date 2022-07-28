@@ -15,8 +15,8 @@ function ProfileDeleteCard({ danceClass, setClasses, classes }) {
     <div>
       {classes ? (
         <div id={danceClass.id}>
-          <p>{danceClass?.danceClass?.name}</p>
-          <p>{danceClass?.danceClass?.time}</p>
+          <p>{danceClass?.dance_class?.name}</p>
+          <p>{danceClass?.dance_class?.time}</p>
         </div>
       ) : null}
       <Button
