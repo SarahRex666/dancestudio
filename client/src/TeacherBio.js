@@ -17,7 +17,6 @@ function TeacherBio({ bio, user, setTeachers, setBio }) {
     content: "",
     rating: "",
   });
-  console.log(formState);
 
   const handleChange = (e) => {
     setFormState({
