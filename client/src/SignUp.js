@@ -23,7 +23,6 @@ function SignUp() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    e.target.reset();
     fetch("/users", {
       method: "POST",
       headers: {
