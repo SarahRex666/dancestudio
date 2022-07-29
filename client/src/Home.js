@@ -9,7 +9,7 @@ function Home() {
       <h1 class="text-center">A STEP ABOVE</h1>
       <img
         class="rounded mx-auto d-block"
-        src="https://i.ibb.co/GRngkW1/A-Step-above.png"
+        src="https://i.ibb.co/tDQycqN/A-Step-above.png"
       ></img>
     </div>
   );
