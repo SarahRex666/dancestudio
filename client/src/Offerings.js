@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useReducer } from "react";
 import OfferingsContainer from "./OfferingsContainer";
+import Card from "react-bootstrap/Card";
 
 function Offerings({ currentUser, setCurrentUser }) {
   const [offerings, setOfferings] = useState([]);
