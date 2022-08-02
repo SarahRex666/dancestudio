@@ -12,6 +12,7 @@ import Contact from "./Contact";
 import Logout from "./Logout";
 import Profile from "./Profile";
 import TeacherBio from "./TeacherBio";
+import Footer from "./Footer";
 
 function App() {
   const [currentUser, setCurrentUser] = useState([]);
@@ -80,6 +81,7 @@ function App() {
           </div>
         </div>
       </BrowserRouter>
+      <Footer />
     </AuthProvider>
   );
 }

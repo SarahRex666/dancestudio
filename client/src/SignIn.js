@@ -36,38 +36,48 @@ function SignIn({ setCurrentUser }) {
   };
 
   return (
-    <FormContainer>
-      <Form className="mt-5" onSubmit={handleSubmit}>
-        <Form.Group>
-          <Form.Label>User Name</Form.Label>
-          <Form.Control
-            type="text"
-            id="username"
-            placeholder="User Name"
-            value={formState.username}
-            onChange={handleChange}
-          />
+    <div class="mt-5 mb-5 pt-5 pb-5">
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <FormContainer>
+        <Form onSubmit={handleSubmit}>
+          <Form.Group>
+            <Form.Label>User Name</Form.Label>
+            <Form.Control
+              type="text"
+              id="username"
+              placeholder="User Name"
+              value={formState.username}
+              onChange={handleChange}
+            />
+            <br></br>
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              type="password"
+              id="password"
+              placeholder="Password"
+              value={formState.password}
+              onChange={handleChange}
+            />
+          </Form.Group>
           <br></br>
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            id="password"
-            placeholder="Password"
-            value={formState.password}
-            onChange={handleChange}
-          />
-        </Form.Group>
-        <br></br>
-        <Button
-          variant="outline-secondary"
-          type="submit"
-          id="submit"
-          value="Submit"
-        >
-          Submit
-        </Button>
-      </Form>
-    </FormContainer>
+          <Button
+            variant="outline-secondary"
+            type="submit"
+            id="submit"
+            value="Submit"
+          >
+            Submit
+          </Button>
+        </Form>
+      </FormContainer>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+    </div>
   );
 }
 

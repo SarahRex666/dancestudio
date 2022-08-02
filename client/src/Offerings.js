@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useReducer } from "react";
 import OfferingsContainer from "./OfferingsContainer";
 import Card from "react-bootstrap/Card";
+import Footer from "./Footer";
 
 function Offerings({ currentUser, setCurrentUser }) {
   const [offerings, setOfferings] = useState([]);
@@ -17,10 +18,11 @@ function Offerings({ currentUser, setCurrentUser }) {
       .then(forceUpdate());
   }, []);
   return (
-    <div class="container">
+    <div class="container pb-5">
       <br></br>
       <br></br>
       <h1>OFFERINGS</h1>
+      <br></br>
       <OfferingsContainer
         setCurrentUser={setCurrentUser}
         currentUser={currentUser}

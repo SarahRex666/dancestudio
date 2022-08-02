@@ -1,4 +1,5 @@
 import Button from "react-bootstrap/Button";
+import { Card } from "react-bootstrap";
 
 function ProfileDeleteCard({ danceClass, setClasses, classes }) {
   const handleDelete = () => {
@@ -12,22 +13,27 @@ function ProfileDeleteCard({ danceClass, setClasses, classes }) {
       .then((resp) => setClasses(resp));
   };
   return (
-    <div>
-      {classes ? (
-        <div id={danceClass.id}>
-          <p>{danceClass?.dance_class?.name}</p>
-          <p>{danceClass?.dance_class?.time}</p>
-        </div>
-      ) : null}
-      <Button
-        variant="outline-secondary"
-        class="btn btn-secondary"
-        type="button"
-        onClick={() => handleDelete()}
-      >
-        Drop Class
-      </Button>
-    </div>
+    <>
+      <Card border="secondary" style={{ width: "18rem" }}>
+        {classes ? (
+          <div id={danceClass.id}>
+            <Card.Header>{danceClass?.dance_class?.name}</Card.Header>
+            <Card.Body>
+              <p>{danceClass?.dance_class?.time}</p>
+              <Button
+                variant="outline-secondary"
+                class="btn btn-secondary"
+                type="button"
+                onClick={() => handleDelete()}
+              >
+                Drop Class
+              </Button>
+            </Card.Body>
+          </div>
+        ) : null}
+      </Card>
+      <br></br>
+    </>
   );
 }
 

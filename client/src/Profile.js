@@ -41,7 +41,7 @@ function Profile({ currentUser, setCurrentUser }) {
   };
 
   return (
-    <div class="container">
+    <div class="container pb-5">
       <br></br>
       <br></br>
       <h1>PROFILE</h1>

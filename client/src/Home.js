@@ -2,7 +2,7 @@ import React from "react";
 
 function Home() {
   return (
-    <div>
+    <div class="pb-20">
       <br></br>
       <br></br>
       <br></br>
@@ -11,6 +11,10 @@ function Home() {
         class="rounded mx-auto d-block"
         src="https://i.ibb.co/tDQycqN/A-Step-above.png"
       ></img>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
     </div>
   );
 }

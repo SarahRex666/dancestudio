@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import TeacherContainer from "./TeacherContainer";
+import Footer from "./Footer";
+import { Card, Row, Col } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 
 function Teachers({ currentUser }) {
   const [teachers, setTeachers] = useState([]);
@@ -17,7 +20,7 @@ function Teachers({ currentUser }) {
   }, []);
 
   return (
-    <div class="container">
+    <div class="container mb-5 pb-5">
       <br></br>
       <br></br>
       <TeacherContainer
