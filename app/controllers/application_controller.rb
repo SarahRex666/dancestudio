@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::API
   include ActionController::Cookies
+  include ActionController::MimeResponds
   before_action :authenticate_user
 
     private 
