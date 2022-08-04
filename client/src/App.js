@@ -13,6 +13,8 @@ import Logout from "./Logout";
 import Profile from "./Profile";
 import TeacherBio from "./TeacherBio";
 import Footer from "./Footer";
+import ForgotPassword from "./ForgotPassword";
+import ResetPassword from "./ResetPassword";
 
 function App() {
   const [currentUser, setCurrentUser] = useState([]);
@@ -63,6 +65,8 @@ function App() {
                 element={<SignIn setCurrentUser={setCurrentUser} />}
               />
               <Route path="/SignUp" element={<SignUp />} />
+              <Route path="/ForgotPassword" element={<ForgotPassword />} />
+              <Route path="/ResetPassword" element={<ResetPassword />} />
               <Route
                 path="/Profile"
                 element={

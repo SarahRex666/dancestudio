@@ -4,11 +4,10 @@ import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import FormContainer from "./FormContainer";
-import ForgotPassword from "./ForgotPassword";
 
-function SignIn({ setCurrentUser }) {
+function ResetPassword() {
   const [formState, setFormState] = useState({
-    username: "",
+    email: "",
     password: "",
   });
   const [user, setUser] = useState("");
@@ -22,19 +21,14 @@ function SignIn({ setCurrentUser }) {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("/login", {
+    fetch("/password/reset", {
       method: "POST",
       withCredentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formState),
-    })
-      .then((r) => r.json())
-      .then((newUser) => {
-        if (newUser.id) setCurrentUser(newUser);
-      })
-      .then(navigate("/"));
+    }).then(navigate("/"));
   };
 
   return (
@@ -46,16 +40,17 @@ function SignIn({ setCurrentUser }) {
       <FormContainer>
         <Form onSubmit={handleSubmit}>
           <Form.Group>
-            <Form.Label>User Name</Form.Label>
+            <Form.Label>Email:</Form.Label>
             <Form.Control
               type="text"
-              id="username"
-              placeholder="User Name"
-              value={formState.username}
+              id="email"
+              placeholder="Email"
+              value={formState.email}
               onChange={handleChange}
             />
-            <br></br>
-            <Form.Label>Password</Form.Label>
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Password:</Form.Label>
             <Form.Control
               type="password"
               id="password"
@@ -75,9 +70,6 @@ function SignIn({ setCurrentUser }) {
           </Button>
           <br></br>
           <br></br>
-          <Link to="/ForgotPassword" class="mt-5 mb-5 pt-5 pb-5">
-            Forgot Password?
-          </Link>
         </Form>
       </FormContainer>
       <br></br>
@@ -89,4 +81,4 @@ function SignIn({ setCurrentUser }) {
   );
 }
 
-export default SignIn;
+export default ResetPassword;

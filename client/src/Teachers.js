@@ -29,6 +29,9 @@ function Teachers({ currentUser }) {
         teachers={teachers}
         setTeachers={setTeachers}
       />
+      <br></br>
+      <br></br>
+      <br></br>
     </div>
   );
 }
