@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Button } from "react-bootstrap";
+import TeacherBioForm from "./TeacherBioForm";
 
 function TeacherBioCard({ review, setReviewContent, setBio, bio, user }) {
   const handleDelete = () => {
@@ -17,7 +18,7 @@ function TeacherBioCard({ review, setReviewContent, setBio, bio, user }) {
       .then((res) => setReviewContent(res.reviews));
   };
 
-  if (user.admin) {
+  if (user && user.admin) {
     return (
       <div className="mt-5">
         <Container>
@@ -41,7 +42,27 @@ function TeacherBioCard({ review, setReviewContent, setBio, bio, user }) {
       </div>
     );
   }
-
+  if (user && user.id) {
+    return (
+      <div className="mt-5">
+        <Container>
+          <Row className="justify-content-md-center">
+            <Col md="auto">
+              <Card style={{ width: "18rem" }}>
+                <Card.Body>
+                  <Card.Title>{review.user.username}</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">
+                    {review.rating}/5
+                  </Card.Subtitle>
+                  <Card.Text>{review.content}</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    );
+  }
   return (
     <div className="mt-5">
       <Container>
@@ -62,5 +83,4 @@ function TeacherBioCard({ review, setReviewContent, setBio, bio, user }) {
     </div>
   );
 }
-
 export default TeacherBioCard;
