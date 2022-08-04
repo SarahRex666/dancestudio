@@ -23,7 +23,7 @@ include SendGrid
         from = Email.new(email: 'sarah@sarahrex.info')
         to = Email.new(email: user.email)
         subject = 'A Step Above Password Recovery'
-        content = Content.new(type: 'text/plain', value: 'Go to http://localhost:3001/ResetPassword')
+        content = Content.new(type: 'text/plain', value: 'Go to https://final-project-asapa.herokuapp.com/ResetPassword')
         mail = Mail.new(from, subject, to, content)
         
         sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
