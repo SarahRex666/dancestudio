@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, useNavigate, Link } from "react-router-dom";
 import ProfileCard from "./ProfileCard";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -12,6 +12,7 @@ function Profile({ currentUser, setCurrentUser }) {
     last_name: "",
     address: "",
     phone: "",
+    password: "",
   });
 
   useEffect(() => {
@@ -37,6 +38,7 @@ function Profile({ currentUser, setCurrentUser }) {
       body: JSON.stringify(formState),
     })
       .then((r) => r.json())
+      .then((r) => setCurrentUser(r))
       .then(navigate("/"));
   };
 
@@ -84,6 +86,8 @@ function Profile({ currentUser, setCurrentUser }) {
             onChange={handleChange}
           />
           <br></br>
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="password" id="password" onChange={handleChange} />
         </Form.Group>
         <Button
           variant="outline-secondary"
@@ -94,6 +98,7 @@ function Profile({ currentUser, setCurrentUser }) {
         >
           Submit
         </Button>
+        <br></br>
         <br></br>
         <br></br>
       </Form>
